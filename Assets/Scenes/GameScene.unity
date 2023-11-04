@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 122268285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Underground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 425484995}
   - component: {fileID: 425484994}
   - component: {fileID: 425484993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10341,7 +10341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 604217941}
   - component: {fileID: 604217940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10388,7 +10388,7 @@ GameObject:
   - component: {fileID: 631562941}
   - component: {fileID: 631562943}
   - component: {fileID: 631562942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain_0_0_e8dbe36f-a259-41d2-a41d-45b625e065cc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10510,7 +10510,7 @@ GameObject:
   - component: {fileID: 857679449}
   - component: {fileID: 857679448}
   - component: {fileID: 857679447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12246,7 +12246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953022574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12317,7 +12317,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.05
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -12348,7 +12348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984516408}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12601905, y: -0.000000019083956, z: 0.0000000024242688, w: 0.9920278}
+  m_LocalRotation: {x: 0.12601905, y: 0.000000019083956, z: -0.0000000024242688, w: 0.9920278}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12403,7 +12403,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.05
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -12650,7 +12650,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.05
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -12678,7 +12678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201171359}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.124939084, y: -0.00000003797883, z: 0.000000004782514, w: 0.99216443}
+  m_LocalRotation: {x: 0.124939084, y: 0.00000003797883, z: -0.000000004782514, w: 0.99216443}
   m_LocalPosition: {x: 255.5, y: 4.2214403, z: 245.51378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12729,9 +12729,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1231802099}
   - component: {fileID: 1231802100}
+  - component: {fileID: 1231802101}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12778,6 +12779,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -1, z: 0}
+--- !u!114 &1231802101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231802098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36a7e02716d37043a8b917aeaaa5b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1231802100}
+  cam: {fileID: 1201171363}
+  speed: 5
+  turnSmoothTime: 0.1
 --- !u!43 &1243722352
 Mesh:
   m_ObjectHideFlags: 0
@@ -13236,6 +13253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733682975}
   - component: {fileID: 1733682974}
+  - component: {fileID: 1733682976}
   m_Layer: 0
   m_Name: ThirdPersonCamera
   m_TagString: Untagged
@@ -13267,7 +13285,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.05
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -13321,7 +13339,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: -180
     m_MaxValue: 180
     m_Wrap: 1
@@ -13373,6 +13391,36 @@ Transform:
   - {fileID: 1780850869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733682976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733682973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.5
+  m_DampingWhenOccluded: 0.5
+  m_OptimalTargetDistance: 0
 --- !u!1 &1780850867
 GameObject:
   m_ObjectHideFlags: 3
@@ -13420,7 +13468,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.05
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -13451,7 +13499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780850867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10800146, y: -0.000000017105737, z: 0.0000000018583144, w: 0.99415076}
+  m_LocalRotation: {x: 0.10800146, y: 0.000000017105734, z: -0.0000000018583141, w: 0.99415076}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13505,7 +13553,7 @@ GameObject:
   - component: {fileID: 1906239770}
   - component: {fileID: 1906239769}
   - component: {fileID: 1906239768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Corridors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16407,7 +16455,7 @@ GameObject:
   - component: {fileID: 2014237838}
   - component: {fileID: 2014237837}
   - component: {fileID: 2014237836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17727,7 +17775,7 @@ GameObject:
   - component: {fileID: 2118302533}
   - component: {fileID: 2118302532}
   - component: {fileID: 2118302531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
