@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-
 public class ThirdPersonMovement : MonoBehaviour
 {
     readonly string MOVING_STATE = "isMoving";
