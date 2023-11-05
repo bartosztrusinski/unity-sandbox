@@ -9,21 +9,19 @@ public class PlayerEnergy : MonoBehaviour
 
     void Start()
     {
-        currentEnergy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
+        energyBar.SetEnergy(currentEnergy);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            UseEnergy(20);
-        }
-    }
-
-    void UseEnergy(int energy)
+    public void LoseEnergy(int energy)
     {
         currentEnergy -= energy;
+        energyBar.SetEnergy(currentEnergy);
+    }
+
+    public void GainEnergy(int energy)
+    {
+        currentEnergy += energy;
         energyBar.SetEnergy(currentEnergy);
     }
 }
