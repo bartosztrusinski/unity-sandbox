@@ -35,6 +35,12 @@ public class Gun : MonoBehaviour
             impactInstance.Play();
             Destroy(impactInstance.gameObject, 2f);
 
+            Target target = hit.transform.GetComponent<Target>();
+            if(target != null)
+            {
+                target.TakeDamage(damage);
+            }
+
             if(hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
