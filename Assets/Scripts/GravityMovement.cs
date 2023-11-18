@@ -48,15 +48,23 @@ public class GravityMovement : MonoBehaviour
     void UpdateIsGrounded()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        playerAnimator.SetBool(GROUNDED_STATE, isGrounded);
+
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(GROUNDED_STATE, isGrounded);
+        }
     }
 
     void HandleGrounded()
     {
         velocity.y = -2f;
         isJumping = false;
-        playerAnimator.SetBool(JUMPING_STATE, false);
-        playerAnimator.SetBool(FALLING_STATE, false);
+
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(JUMPING_STATE, false);
+            playerAnimator.SetBool(FALLING_STATE, false);
+        }
     }
 
     bool ShouldJump()
@@ -66,7 +74,11 @@ public class GravityMovement : MonoBehaviour
 
     void HandleJump()
     {
-        playerAnimator.SetBool(JUMPING_STATE, true);
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(JUMPING_STATE, true);
+        }
+
         isJumping = true;
         velocity.y = Mathf.Sqrt(jumpHeight * gravity * -2f);
     }
@@ -77,6 +89,9 @@ public class GravityMovement : MonoBehaviour
     }
     void HandleFalling()
     {
-        playerAnimator.SetBool(FALLING_STATE, true);
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(FALLING_STATE, true);
+        }
     }
 }

@@ -1,16 +1,32 @@
+using System.Collections;
 using UnityEngine;
+
 
 public class Target : MonoBehaviour
 {
-    public int health = 100;
     public HealthBar healthBar;
+    public SpawnPoints spawnPoints;
     public Animator targetAnimator;
+    public Transform cam;
 
+    public int maxHealth = 100;
+    public enum DeathType { Respawn, Teleport, Die };
+    public DeathType deathType = DeathType.Die;
+
+    private int health;
     private bool isDying;
+    private float deathAnimationLength;
+    private GameObject currentPoint;
 
-    void Start()
+    private readonly string HIT_ANIMATION = "GetHit";
+    private readonly string DIE_ANIMATION = "Die";
+
+
+    private void Start()
     {
-        healthBar.SetMaxHealth(health);
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        deathAnimationLength = targetAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }
 
     public void TakeDamage(int amount)
@@ -20,25 +36,73 @@ public class Target : MonoBehaviour
             return;
         }
 
-        targetAnimator.Play("GetHit");
-
-        health -= amount;
-        healthBar.SetHealth(health);
+        targetAnimator.Play(HIT_ANIMATION);
+        SetHealth(health - amount);
 
         if (health <= 0f)
         {
-            Die();
+            switch (deathType)
+            {
+                case DeathType.Respawn:
+                    StartCoroutine(Respawn());
+                    break;
+                case DeathType.Teleport:
+                    StartCoroutine(Teleport());
+                    break;
+                case DeathType.Die:
+                    Die();
+                    break;
+            }
         }
     }
 
-    void Die()
+    private void SetHealth(int amount)
+    {
+        health = amount;
+        healthBar.SetHealth(health);
+    }
+
+    private void Die()
     {
         isDying = true;
+        targetAnimator.Play(DIE_ANIMATION);
 
-        targetAnimator.Play("Die");
-
-        float deathAnimationLength = targetAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         Destroy(healthBar.gameObject);
         Destroy(gameObject, deathAnimationLength);
+    }
+
+    private IEnumerator Respawn()
+    {
+        isDying = true;
+        targetAnimator.Play(DIE_ANIMATION);
+        healthBar.Hide();
+
+        yield return new WaitForSeconds(deathAnimationLength);
+
+        isDying = false;
+        SetHealth(maxHealth);
+        healthBar.Show();
+    }
+
+    private IEnumerator Teleport()
+    {
+        isDying = true;
+        targetAnimator.Play(DIE_ANIMATION);
+        healthBar.Hide();
+
+        yield return new WaitForSeconds(0.7f);
+
+        gameObject.SetActive(false);
+
+        isDying = false;
+        SetHealth(maxHealth);
+        healthBar.Show();
+
+        spawnPoints.FreeSpawnPoint(currentPoint);
+        currentPoint = spawnPoints.GetRandomSpawnPoint();
+        transform.position = currentPoint.transform.position;
+        transform.LookAt(transform.position - cam.forward);
+
+        gameObject.SetActive(true);
     }
 }

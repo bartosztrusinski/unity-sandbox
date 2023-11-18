@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float speed = 5f;
     public float turnSmoothTime = 0.1f;
-    
+
     float turnSmoothVelocity;
     bool isSprinting;
 
@@ -43,7 +43,11 @@ public class ThirdPersonMovement : MonoBehaviour
     void HandleMove(Vector3 direction)
     {
         UpdateIsSprinting();
-        playerAnimator.SetBool(MOVING_STATE, true);
+
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(MOVING_STATE, true);
+        }
 
         float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
         float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -56,12 +60,19 @@ public class ThirdPersonMovement : MonoBehaviour
     void UpdateIsSprinting()
     {
         isSprinting = Input.GetKey(KeyCode.LeftShift);
-        playerAnimator.SetBool(SPRINTING_STATE, isSprinting);
+
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(SPRINTING_STATE, isSprinting);
+        }
     }
 
     void HandleIdle()
     {
-        playerAnimator.SetBool(MOVING_STATE, false);
-        playerAnimator.SetBool(SPRINTING_STATE, false);
+        if (playerAnimator)
+        {
+            playerAnimator.SetBool(MOVING_STATE, false);
+            playerAnimator.SetBool(SPRINTING_STATE, false);
+        }
     }
 }
