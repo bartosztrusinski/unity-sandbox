@@ -105,4 +105,12 @@ public class Target : MonoBehaviour
 
         gameObject.SetActive(true);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bomb")
+        {
+            TakeDamage(30);
+        }
+    }
 }

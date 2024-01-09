@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+    public TextMeshProUGUI health;
 
     void Start()
     {
@@ -24,4 +26,24 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += health;
         healthBar.SetHealth(currentHealth);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            TakeDamage(10);
+        }
+    }
+
+    public void Update()
+    {
+        health.text = currentHealth.ToString();
+
+        if (currentHealth <= 0) {
+            Time.timeScale = 0;
+        }
+
+    }
+
+
 }
