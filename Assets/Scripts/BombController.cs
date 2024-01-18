@@ -13,7 +13,6 @@ public class BombController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             ParticleSystem x = Instantiate(explosion, Vector3.zero, Quaternion.identity);
-            Debug.Log("BBB");
             x.transform.position = transform.position;
             x.Play();
             Destroy(this.gameObject, 1f);
