@@ -1,17 +1,20 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
     public int damage = 10;
-    public float range = 100f;
-    public float fireRate = 15f;
-    public float impactForce = 30f;
+    public float range;
+    public float fireRate;
+    public float impactForce;
     private float nextTimeToFire = 0f;
 
 
     public GameObject source;
     public ParticleSystem muzzleFlash;
     public ParticleSystem impactEffect;
+    private String playerLayer;
 
     public void Shoot()
     {
@@ -29,7 +32,7 @@ public class WeaponSystem : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(damage, playerLayer);
             }
 
             if (hit.rigidbody != null)
@@ -47,4 +50,14 @@ public class WeaponSystem : MonoBehaviour
             Shoot();
         }
     }
+
+    public void Start()
+    {
+
+        if (!LayerMask.LayerToName(transform.gameObject.layer).Equals("Turret")) {
+            playerLayer = LayerMask.LayerToName(transform.parent.gameObject.layer);
+        }
+
+    }
+
 }

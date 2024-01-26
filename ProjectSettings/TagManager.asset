@@ -12,16 +12,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Turret
   - Water
   - UI
   - Environment
   - Box
   - Box1
-  - 
-  - 
-  - 
-  - 
+  - Cam1
+  - Cam2
+  - Player2
+  - Player
   - 
   - 
   - 

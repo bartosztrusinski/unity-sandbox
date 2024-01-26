@@ -1,0 +1,46 @@
+{
+    "name": "Join",
+    "maps": [
+        {
+            "name": "Player1",
+            "id": "57bd520e-7ae6-4d8d-8d8e-233fb109c4da",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "aab22915-de6b-43b2-8f2d-65afd79d3471",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cc0de48d-bfee-40aa-8fcf-be26aba9d7b4",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

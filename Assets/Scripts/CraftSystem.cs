@@ -36,15 +36,15 @@ public class CraftSystem : MonoBehaviour
 
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Box1"))
             {
-                ChangeColor(objectToCreate, blockedColor); // Zmieñ kolor na zablokowany
+                ChangeColor(objectToCreate, blockedColor); 
             }
             else {
-                ChangeColor(objectToCreate, defaultColor); // Przywróæ domyœlny kolor                
+                ChangeColor(objectToCreate, defaultColor);                 
             }
 
             if (canCreateObject && (!(hit.collider.gameObject.layer == LayerMask.NameToLayer("Box1"))))
             {
-                objectPos += Vector3.up * 0.5f; // Domyœlna wysokoœæ dla nowych obiektów
+                objectPos += Vector3.up * 0.5f; 
 
                 if (Input.GetMouseButtonDown(0))
                 {

@@ -30,16 +30,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float animationSmoothTime = 0.1f;
     [SerializeField] private float animationPlayTransition = 0.15f;
 
+    private Vector2 movementInput = Vector2.zero;
+    private bool jumped = false;
+
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
 
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         cameraTransform = cam.transform;
-        moveAction = playerInput.actions["Move"];
-        jumpAction = playerInput.actions["Jump"];
+
 
 
         animator = GetComponent<Animator>();
@@ -47,6 +48,15 @@ public class PlayerController : MonoBehaviour
         moveZParameterId = Animator.StringToHash("MoveZ");
         jumpAnimation = Animator.StringToHash("Pistol Jump");
     }
+
+    public void OnMove(InputAction.CallbackContext context) {
+        movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context) {
+        jumped = context.action.triggered;
+    }
+
 
 
     void Update()
@@ -57,9 +67,9 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector2 input = movementInput;
         currentAnimationBlendVector = Vector2.SmoothDamp(currentAnimationBlendVector, input, ref animationVelocity, animationSmoothTime);
-        Vector3 move = new Vector3(currentAnimationBlendVector.x, 0, currentAnimationBlendVector.y);
+        Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
         move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
         move.y = 0f;    
         controller.Move(move * Time.deltaTime * playerSpeed);
@@ -68,7 +78,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(moveZParameterId, currentAnimationBlendVector.y);
 
         // Changes the height position of the player..
-        if (jumpAction.triggered && groundedPlayer)
+        if (jumped && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
             animator.CrossFade(jumpAnimation, animationPlayTransition);

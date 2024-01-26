@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 
@@ -20,7 +21,7 @@ public class Target : MonoBehaviour
 
     private readonly string HIT_ANIMATION = "GetHit";
     private readonly string DIE_ANIMATION = "Die";
-
+    public PlayerCounter playerCounter;
 
     private void Start()
     {
@@ -29,12 +30,15 @@ public class Target : MonoBehaviour
         deathAnimationLength = targetAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, string layer)
     {
         if (isDying)
         {
             return;
+
         }
+
+   
 
         targetAnimator.Play(HIT_ANIMATION);
         SetHealth(health - amount);
@@ -45,12 +49,15 @@ public class Target : MonoBehaviour
             {
                 case DeathType.Respawn:
                     StartCoroutine(Respawn());
+                    playerCount(layer);
                     break;
                 case DeathType.Teleport:
                     StartCoroutine(Teleport());
+                    playerCount(layer);
                     break;
                 case DeathType.Die:
                     Die();
+                    playerCount(layer);
                     break;
             }
         }
@@ -61,6 +68,22 @@ public class Target : MonoBehaviour
         health = amount;
         healthBar.SetHealth(health);
     }
+
+    private void playerCount(string layer) {
+
+        if (layer.Equals("Player")) {
+
+            PlayerCounter.playerKills1++;
+
+        }
+
+        if (layer.Equals("Player2"))
+        {
+            PlayerCounter.playerKills2++;
+        }
+
+    }
+
 
     private void Die()
     {
@@ -110,7 +133,7 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bomb")
         {
-            TakeDamage(30);
+            TakeDamage(30, tag);
         }
     }
 }
