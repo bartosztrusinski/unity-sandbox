@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SpawnTurret",
+                    "type": "Button",
+                    "id": "2cdc7d36-e77c-422c-8a3c-8ed2bdf67ba9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -210,6 +219,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d503a858-15a8-4c9b-95f5-1ca553bc63e6",
+                    "path": "<Keyboard>/#(E)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseKeybord",
+                    "action": "SpawnTurret",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
