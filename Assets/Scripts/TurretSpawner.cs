@@ -1,33 +1,20 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class TurretSpawner : MonoBehaviour
 {
     public PlayerEnergy playerEnergy;
     public GameObject turretPrefab;
     public int turretCost = 30;
-    private bool isTurretSpawn = false;
 
-
-    public void OnTurretSpawn(InputAction.CallbackContext context)
+    public void OnTurretSpawn()
     {
-        isTurretSpawn = true;
-    }
-
-
-    void Update()
-    {
-        if (isTurretSpawn)
+        if (playerEnergy.currentEnergy >= turretCost)
         {
-            isTurretSpawn = false;
-            if (playerEnergy.currentEnergy >= turretCost)
-            {
-                Vector3 spawnPosition = transform.position + transform.right * 2f;
-                spawnPosition.y = 0f + turretPrefab.transform.localScale.y / 2f;
-                Instantiate(turretPrefab, spawnPosition, Quaternion.identity);
+            Vector3 spawnPosition = transform.position + transform.right * 2f;
+            spawnPosition.y = 0f + turretPrefab.transform.localScale.y / 2f;
+            Instantiate(turretPrefab, spawnPosition, Quaternion.identity);
 
-                playerEnergy.LoseEnergy(turretCost);
-            }
+            playerEnergy.LoseEnergy(turretCost);
         }
     }
 }

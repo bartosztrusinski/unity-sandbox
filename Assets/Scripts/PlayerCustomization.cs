@@ -26,13 +26,6 @@ public class PlayerCustomization : MonoBehaviour
         PlayerStatics.Player1Color = player1Color.text;
         PlayerStatics.Player2Color = player2Color.text;
         PlayerStatics.IsMultiplayer = player2Field.activeSelf;
-
-        Debug.Log("Player 1 Controls: " + PlayerStatics.Player1Controls);
-        Debug.Log("Player 1 Color: " + PlayerStatics.Player1Color);
-        Debug.Log("Player 2 Color: " + PlayerStatics.Player2Color);
-        Debug.Log("Is Multiplayer: " + PlayerStatics.IsMultiplayer);
-        Debug.Log("Starting game...");
-
         SceneManager.LoadScene("GameScene");
     }
 
