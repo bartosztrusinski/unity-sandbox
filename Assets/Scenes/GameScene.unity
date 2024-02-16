@@ -12523,6 +12523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1023928652}
+  selectedButton: {fileID: 2023735623}
 --- !u!1 &604217939
 GameObject:
   m_ObjectHideFlags: 0
@@ -18604,27 +18605,27 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_PointAction: {fileID: 2319976169536494422, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_PointAction: {fileID: 1054132383583890850, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_MoveAction: {fileID: -550597698961522197, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_MoveAction: {fileID: -5490595494131791224, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_SubmitAction: {fileID: 5947064266937141399, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_SubmitAction: {fileID: 568550120854092093, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_CancelAction: {fileID: 3472105124544757726, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_CancelAction: {fileID: 7756869461811715240, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_LeftClickAction: {fileID: 4972368310394125823, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_LeftClickAction: {fileID: 6705382541263925867, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_MiddleClickAction: {fileID: 2270705296662862766, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_MiddleClickAction: {fileID: 341463211556065938, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_RightClickAction: {fileID: 4943377932939714818, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_RightClickAction: {fileID: -3726844733798509026, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_ScrollWheelAction: {fileID: 3922328464976966569, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_ScrollWheelAction: {fileID: -3030612277582936102, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_TrackedDevicePositionAction: {fileID: -7101288424122459630, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_TrackedDevicePositionAction: {fileID: 7962320970914406960, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 6943303738938425723, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b,
+  m_TrackedDeviceOrientationAction: {fileID: 290049182803704744, guid: d2a557154d4ff714a9fc6260bbc57600,
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
@@ -28404,7 +28405,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.21960784}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.40392157}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 0.38431373}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

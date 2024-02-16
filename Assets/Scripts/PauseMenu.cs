@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject selectedButton;
 
     public void OnPauseMenuClick()
     {
@@ -23,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        EventSystem.current.SetSelectedGameObject(selectedButton);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
