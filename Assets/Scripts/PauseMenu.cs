@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    //CursorLockMode wantedMode;
 
     public void OnPauseMenuClick()
     {
@@ -26,9 +26,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        //Cursor.visible = false;
-        //wantedMode = CursorLockMode.Confined;
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -38,10 +35,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        //Cursor.visible = true;
-        //wantedMode = CursorLockMode.None;
-        //Cursor.lockState = wantedMode;
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
