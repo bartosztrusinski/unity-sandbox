@@ -145,7 +145,8 @@ MonoBehaviour:
   - {fileID: 246769496954806861}
   - {fileID: 3110208122564824675}
   - {fileID: 1363936457199169390}
-  playerInput: {fileID: 0}
+  weapon: {fileID: 0}
+  actionAsset: {fileID: 0}
 --- !u!1 &364363366535832369
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,8 +633,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 254.602, y: 0.5, z: 251.478}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7435671037404043890}
   - {fileID: 6835583272498663098}
@@ -842,10 +843,10 @@ MonoBehaviour:
     m_ActionName: Player1/Gun5[/Keyboard/5]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 387f4fc3-29f9-41ac-a9d1-67a9e3d197af
-    m_ActionName: Player1/Join[/Keyboard/j]
+    m_ActionId: 2cdc7d36-e77c-422c-8a3c-8ed2bdf67ba9
+    m_ActionName: Player1/SpawnTurret[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Keyboard
+  m_DefaultControlScheme: MouseKeybord
   m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -886,7 +887,7 @@ MonoBehaviour:
   - m_Rig: {fileID: 6852508275006567680}
     m_Active: 1
   m_Effectors:
-  - m_Transform: {fileID: 7655204248109048702}
+  - m_Transform: {fileID: 0}
     m_Style:
       shape: {fileID: 4300000, guid: c6793350c150f456688e39a81f97364a, type: 2}
       color: {r: 1, g: 0, b: 0, a: 0.5}
@@ -3036,12 +3037,6 @@ GameObject:
 --- !u!4 &6241611855797896031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5767824573731459556, guid: eae6d3d54d4740040a525069635f0dc6,
-    type: 3}
-  m_PrefabInstance: {fileID: 474501983281812155}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7655204248109048702 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7829924384916828613, guid: eae6d3d54d4740040a525069635f0dc6,
     type: 3}
   m_PrefabInstance: {fileID: 474501983281812155}
   m_PrefabAsset: {fileID: 0}

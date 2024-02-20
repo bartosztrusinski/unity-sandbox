@@ -8,6 +8,7 @@ public class PlayerJoiner : MonoBehaviour
     public InputActionAsset actionAsset; // Referencja do InputActionAsset
 
     private InputAction joinPlayerAction; // Akcja do³¹czania gracza
+    public GameObject can;
 
     private void Awake()
     {
@@ -19,6 +20,12 @@ public class PlayerJoiner : MonoBehaviour
         {
             joinPlayerAction.performed += _ => JoinPlayer();
             joinPlayerAction.Enable();
+        }
+
+        if (PlayerStatics.IsMultiplayer) {
+
+            can.SetActive(true);
+
         }
 
     }
@@ -37,5 +44,7 @@ public class PlayerJoiner : MonoBehaviour
         if (playerInputManager.playerCount < 2) // Mo¿esz zmieniæ warunek w razie potrzeby
 
             playerInputManager.JoinPlayer();
+            can.SetActive(true);
+            PlayerStatics.IsMultiplayer = true;
         }
     }

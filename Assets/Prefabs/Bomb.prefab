@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1617029458764720799}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,11 +110,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: clock_bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33c98ffb829108c49b9aa5e2b9e87aaa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8302406232826535533, guid: 33c98ffb829108c49b9aa5e2b9e87aaa,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 98f4df5f12f2e114b964809980169db3, type: 2}
+    - target: {fileID: 8596647926454255391, guid: 33c98ffb829108c49b9aa5e2b9e87aaa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

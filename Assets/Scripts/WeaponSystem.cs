@@ -54,7 +54,8 @@ public class WeaponSystem : MonoBehaviour
     public void Start()
     {
 
-        if (!LayerMask.LayerToName(transform.gameObject.layer).Equals("Turret")) {
+        if (!LayerMask.LayerToName(transform.gameObject.layer).Equals("Turret") | !LayerMask.LayerToName(transform.gameObject.layer).Equals(null))
+        {
             playerLayer = LayerMask.LayerToName(transform.parent.gameObject.layer);
         }
 

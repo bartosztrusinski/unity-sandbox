@@ -7,6 +7,7 @@ public class GunSystem2 : MonoBehaviour
     public WeaponSystem2 weapon;
 
     public InputActionAsset actionAsset; // Referencja do InputActionAsset
+    public GameObject[] imgs;
 
 
     private int gunCounter = 0;
@@ -17,6 +18,7 @@ public class GunSystem2 : MonoBehaviour
         InitializeActions();
         SetAllInactive(); // Wy³¹cza wszystko na pocz¹tku
         ActivateItem(0); // Aktywuje pierwszy element jako domyœlny
+        imgs[0].SetActive(true);
     }
 
 
@@ -56,6 +58,7 @@ public class GunSystem2 : MonoBehaviour
             weapon.fireRate = 20;
             weapon.impactForce = 70;
             weapon.muzzleFlash.transform.localScale = Vector3.one;
+            imgs[0].SetActive(true);
         }
 
         if (index == 1)
@@ -64,6 +67,7 @@ public class GunSystem2 : MonoBehaviour
             weapon.fireRate = 30;
             weapon.impactForce = 100;
             weapon.muzzleFlash.transform.localScale *= 1.5f;
+            imgs[1].SetActive(true);
         }
 
         if (index == 2)
@@ -72,6 +76,7 @@ public class GunSystem2 : MonoBehaviour
             weapon.fireRate = 40;
             weapon.impactForce = 120;
             weapon.muzzleFlash.transform.localScale *= 3;
+            imgs[2].SetActive(true);
         }
 
 
@@ -84,6 +89,12 @@ public class GunSystem2 : MonoBehaviour
             gun.SetActive(false);
 
         }
+
+        for (int i = 0; i < 3; i++) {
+            imgs[i].SetActive(false);
+        }
+
+
     }
 
 }

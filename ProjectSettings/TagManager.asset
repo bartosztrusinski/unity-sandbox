@@ -8,6 +8,7 @@ TagManager:
   - Boost
   - Enemy
   - Bomb
+  - Canvas2
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,16 +8,20 @@ public class GunSystem : MonoBehaviour
     public GameObject craftBox;
     public GameObject craftBomb;
     public WeaponSystem weapon;
-
     public InputActionAsset actionAsset; // Referencja do InputActionAsset
-
     private InputAction[] selectActions; // Tablica akcji dla wyboru broni
+    private InputAction shoot;
+
+    public GameObject[] imgs;
 
     void Start()
     {
+        shoot = actionAsset.FindAction("Shoot");    
         InitializeActions();
         SetAllInactive(); // Wy³¹cza wszystko na pocz¹tku
         ActivateItem(0); // Aktywuje pierwszy element jako domyœlny
+        imgs[0].SetActive(true);
+
     }
 
     void OnDestroy()
@@ -61,28 +66,35 @@ public class GunSystem : MonoBehaviour
 
         SetAllInactive();
         guns[index].SetActive(true);
+        InitializeActions();
 
         if (index == 0) {
+            shoot.Enable();
             weapon.damage = 5;
             weapon.fireRate = 20;
             weapon.impactForce = 70;
             weapon.muzzleFlash.transform.localScale = Vector3.one;
+            imgs[0].SetActive(true);
         }
 
         if (index == 1)
         {
+            shoot.Enable();
             weapon.damage = 15;
             weapon.fireRate = 30;
             weapon.impactForce = 100;
-            weapon.muzzleFlash.transform.localScale *= 1.5f;
+            weapon.muzzleFlash.transform.localScale = Vector3.one * 1.5f;
+            imgs[1].SetActive(true);
         }
 
         if (index == 2)
         {
+            shoot.Enable();
             weapon.damage = 25;
             weapon.fireRate = 40;
             weapon.impactForce = 120;
-            weapon.muzzleFlash.transform.localScale *= 3f;
+            weapon.muzzleFlash.transform.localScale = Vector3.one * 3f;
+            imgs[2].SetActive(true);
         }
 
 
@@ -92,18 +104,18 @@ public class GunSystem : MonoBehaviour
     {
         SetAllInactive();
         craftBox.SetActive(true);
-        weapon.damage = 0;
-        weapon.fireRate = 0;
-        weapon.impactForce = 0;
+        weapon.muzzleFlash.transform.localScale = Vector3.zero;
+        shoot.Disable();
+        imgs[3].SetActive(true);
     }
 
     void ActivateCraftBomb()
     {
         SetAllInactive();
         craftBomb.SetActive(true);
-        weapon.damage = 0;
-        weapon.fireRate = 0;
-        weapon.impactForce = 0;
+        weapon.muzzleFlash.transform.localScale = Vector3.zero;
+        shoot.Disable();
+        imgs[4].SetActive(true);
     }
 
     void SetAllInactive()
@@ -115,6 +127,14 @@ public class GunSystem : MonoBehaviour
         }
         craftBox.SetActive(false);
         craftBomb.SetActive(false);
+
+        foreach (var g in imgs) { 
+
+            g.SetActive(false);
+
+        }
+
+
     }
 
 }

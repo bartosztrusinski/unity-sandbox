@@ -69,9 +69,9 @@ public class Target : MonoBehaviour
         healthBar.SetHealth(health);
     }
 
-    private void playerCount(string layer) {
+    public void playerCount(string layer) {
 
-        if (layer.Equals("Player")) {
+        if (layer.Equals("Player") | layer.Equals("Bomb")) {
 
             PlayerCounter.playerKills1++;
 
@@ -133,7 +133,7 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bomb")
         {
-            TakeDamage(30, tag);
+            TakeDamage(30, "Bomb");
         }
     }
 }
