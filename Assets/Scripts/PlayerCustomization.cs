@@ -17,8 +17,8 @@ public class PlayerCustomization : MonoBehaviour
 
     private void Start()
     {
-        SetControlsToKeyboard(1);
-        SetControlsToController(2);
+        //SetControlsToKeyboard(1);
+        //SetControlsToController(2);
     }
 
     public void PlayGame()
