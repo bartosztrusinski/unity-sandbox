@@ -14,7 +14,7 @@ public class WeaponSystem : MonoBehaviour
     public GameObject source;
     public ParticleSystem muzzleFlash;
     public ParticleSystem impactEffect;
-    private String playerLayer;
+    public String playerLayer;
 
     public void Shoot()
     {
@@ -54,11 +54,11 @@ public class WeaponSystem : MonoBehaviour
     public void Start()
     {
 
-        if (!LayerMask.LayerToName(transform.gameObject.layer).Equals("Turret") | !LayerMask.LayerToName(transform.gameObject.layer).Equals(null))
+        playerLayer = "";
+
+        if (!LayerMask.LayerToName(transform.gameObject.layer).Equals("Turret"))
         {
             playerLayer = LayerMask.LayerToName(transform.parent.gameObject.layer);
         }
-
     }
-
 }

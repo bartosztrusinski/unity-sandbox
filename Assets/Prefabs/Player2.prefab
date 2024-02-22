@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: -521669553034734180}
   - component: {fileID: 6487022902883941485}
   - component: {fileID: 374079805817827810}
+  - component: {fileID: 800614712174650955}
   m_Layer: 11
   m_Name: Player2
   m_TagString: Player
@@ -740,6 +741,23 @@ MonoBehaviour:
   source: {fileID: 6984930298732845183, guid: cb54525d7ffcbe94ca3ba17d80ce2f88, type: 3}
   muzzleFlash: {fileID: 6632894543568720683}
   impactEffect: {fileID: 7525892057135278861}
+--- !u!114 &800614712174650955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567160902812330977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7eaecb09f398545b1883811a0c2ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtRed: {fileID: 2800000, guid: 8977e15bb89895f4f98cd987ba2b9b77, type: 3}
+  txtBlue: {fileID: 2800000, guid: a0b0a4ede7f550b4ca80bc635cc4de86, type: 3}
+  txtGreen: {fileID: 2800000, guid: 075a27fd9451ed642aaace028526f9b5, type: 3}
+  player1: {fileID: 9146546528727312073}
+  join: {fileID: -944628639613478452, guid: 380a0dddd5a8ca54cb2372e6e4125be0, type: 3}
 --- !u!1 &987898702643881803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3206,7 @@ GameObject:
   - component: {fileID: 6379857062823940612}
   m_Layer: 11
   m_Name: Ch46
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3228,7 +3246,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9118644cf18d114abae307878884709, type: 2}
+  - {fileID: 2100000, guid: 7ab9c4d7fe984234a8d71e21240e7870, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3469,6 +3487,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6602970025523075651, guid: 0c5e97114ddcf134988be773bc13a86c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ab61b7b36180b514abd01c728c274456, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

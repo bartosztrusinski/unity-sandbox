@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1116082974456400471}
   - component: {fileID: 3663285194433306501}
   - component: {fileID: 5927862853510529206}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1541529004977713718}
   - component: {fileID: 578125691719604602}
   - component: {fileID: 6615769641556185058}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 7388048442539077908}
   - component: {fileID: 3449213195844979213}
   - component: {fileID: 2793564051815533993}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 7236385660569609290}
   - component: {fileID: 626055289866191606}
   - component: {fileID: 1740368907005781558}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4980,7 +4980,7 @@ GameObject:
   - component: {fileID: 7629360295327996808}
   - component: {fileID: 5487014325677060012}
   - component: {fileID: 4687598809728013114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5084,7 +5084,7 @@ GameObject:
   - component: {fileID: 4009955213212806801}
   - component: {fileID: 616728486737122648}
   - component: {fileID: 53192821589262070}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9991,7 +9991,7 @@ GameObject:
   - component: {fileID: 823046559344831411}
   - component: {fileID: 6835901986309830908}
   - component: {fileID: 434200169575228160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ImpactEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10206,7 +10206,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14844,7 +14844,7 @@ GameObject:
   - component: {fileID: 1648012677493104948}
   - component: {fileID: 1604002394056479028}
   - component: {fileID: 3888235824987707114}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19527,7 +19527,7 @@ GameObject:
   - component: {fileID: 702805488359753850}
   - component: {fileID: 1049375262172035827}
   - component: {fileID: 3925360118789247894}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19612,7 +19612,7 @@ GameObject:
   - component: {fileID: 6426813739541736735}
   - component: {fileID: 6151268726621675954}
   - component: {fileID: 3757687953209338374}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19715,10 +19715,11 @@ MonoBehaviour:
   damage: 8
   range: 20
   fireRate: 1
-  impactForce: 30
+  impactForce: 10
   source: {fileID: 5743689661925526869}
   muzzleFlash: {fileID: 4613588866095447094}
   impactEffect: {fileID: 6835901986309830908}
+  playerLayer: 
 --- !u!1001 &4811682474950877548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19730,6 +19731,14 @@ PrefabInstance:
     - target: {fileID: 1743301284569550, guid: af2cfdee2a9fa8b4a9562e766e457aac, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743301284569550, guid: af2cfdee2a9fa8b4a9562e766e457aac, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992675705445476, guid: af2cfdee2a9fa8b4a9562e766e457aac, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4300533007854612, guid: af2cfdee2a9fa8b4a9562e766e457aac, type: 3}
       propertyPath: m_LocalScale.x

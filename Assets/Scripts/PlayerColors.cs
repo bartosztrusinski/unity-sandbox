@@ -55,7 +55,6 @@ public class PlayerColors : MonoBehaviour
         blueColor.SetActive(false);
         prevArrow.SetActive(false);
         PlayerStatics.Player1Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color);
     }
 
     private void SetBlueColor()
@@ -67,7 +66,6 @@ public class PlayerColors : MonoBehaviour
         prevArrow.SetActive(true);
         nextArrow.SetActive(true);
         PlayerStatics.Player1Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color);
     }
 
     private void SetGreenColor()
@@ -77,6 +75,5 @@ public class PlayerColors : MonoBehaviour
         blueColor.SetActive(false);
         nextArrow.SetActive(false);
         PlayerStatics.Player1Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color);
     }
 }

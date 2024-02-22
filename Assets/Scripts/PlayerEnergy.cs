@@ -25,6 +25,9 @@ public class PlayerEnergy : MonoBehaviour
     {
         currentEnergy += energy;
         energyBar.SetEnergy(currentEnergy);
+        if (currentEnergy > 100) {
+            currentEnergy = 100;
+        }
     }
 
     public void Update()

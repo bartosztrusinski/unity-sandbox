@@ -150,6 +150,7 @@ MonoBehaviour:
   source: {fileID: 1201171359}
   muzzleFlash: {fileID: 1985492613}
   impactEffect: {fileID: 2134200226}
+  playerLayer: 
 --- !u!1 &34196748
 GameObject:
   m_ObjectHideFlags: 0
@@ -12094,7 +12095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 584.5, y: 301}
+  m_AnchoredPosition: {x: 576, y: 326}
   m_SizeDelta: {x: 1169, y: 602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596383551
@@ -13603,7 +13604,7 @@ PrefabInstance:
     - target: {fileID: 8285031096714907914, guid: 77449d0b824f02b42bedc4ff67554645,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 257.0192
+      value: 256.88907
       objectReference: {fileID: 0}
     - target: {fileID: 8285031096714907914, guid: 77449d0b824f02b42bedc4ff67554645,
         type: 3}
@@ -16595,7 +16596,7 @@ PrefabInstance:
     - target: {fileID: 8732476387756656451, guid: cb54525d7ffcbe94ca3ba17d80ce2f88,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 256.50302
+      value: 256.40067
       objectReference: {fileID: 0}
     - target: {fileID: 8732476387756656451, guid: cb54525d7ffcbe94ca3ba17d80ce2f88,
         type: 3}
@@ -17628,7 +17629,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3063
+    m_Bits: 3071
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -17649,7 +17650,7 @@ Transform:
   m_GameObject: {fileID: 1201171359}
   serializedVersion: 2
   m_LocalRotation: {x: -0.035997707, y: 0, z: 0, w: 0.99935186}
-  m_LocalPosition: {x: 257.0192, y: 2.733041, z: 241.65161}
+  m_LocalPosition: {x: 256.88907, y: 2.733041, z: 241.65161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19497,7 +19498,8 @@ MonoBehaviour:
   playerEnergy: {fileID: 1476495952}
   turretPrefab: {fileID: 8963272603846074986, guid: 8bf6e92828576c44f8917cd34c091129,
     type: 3}
-  turretCost: 30
+  turretCost: 10
+  iaa: {fileID: -944628639613478452, guid: c53ac8ad80ae6e040aae9ec9d2e8a64b, type: 3}
 --- !u!1001 &1480578688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21089,7 +21091,7 @@ PrefabInstance:
     - target: {fileID: 375708259102049474, guid: 30e3df77a1c95ae42bc9814ac754331b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 256.50302
+      value: 256.40067
       objectReference: {fileID: 0}
     - target: {fileID: 375708259102049474, guid: 30e3df77a1c95ae42bc9814ac754331b,
         type: 3}
@@ -24942,6 +24944,7 @@ MonoBehaviour:
   source: {fileID: 1201171359}
   muzzleFlash: {fileID: 1985492613}
   impactEffect: {fileID: 2134200226}
+  playerLayer: 
 --- !u!1001 &1981748780
 PrefabInstance:
   m_ObjectHideFlags: 0

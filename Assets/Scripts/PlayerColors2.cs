@@ -16,7 +16,7 @@ public class PlayerColors2 : MonoBehaviour
         blueColor.SetActive(false);
         greenColor.SetActive(false);
         prevArrow.SetActive(false);
-        PlayerStatics.Player2Color = currentColor.text;
+        PlayerStatics2.Player2Color = currentColor.text;
     }
     
     public void SetNextColor()
@@ -53,8 +53,7 @@ public class PlayerColors2 : MonoBehaviour
         redColor.SetActive(true);
         blueColor.SetActive(false);
         prevArrow.SetActive(false);
-        PlayerStatics.Player2Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color+"2");
+        PlayerStatics2.Player2Color = currentColor.text;
     }
 
     private void SetBlueColor()
@@ -65,8 +64,7 @@ public class PlayerColors2 : MonoBehaviour
         greenColor.SetActive(false);
         prevArrow.SetActive(true);
         nextArrow.SetActive(true);
-        PlayerStatics.Player2Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color+"2");
+        PlayerStatics2.Player2Color = currentColor.text;
     }
 
     private void SetGreenColor()
@@ -75,7 +73,6 @@ public class PlayerColors2 : MonoBehaviour
         greenColor.SetActive(true);
         blueColor.SetActive(false);
         nextArrow.SetActive(false);
-        PlayerStatics.Player2Color = currentColor.text;
-        Debug.Log(PlayerStatics.Player1Color + "2");
+        PlayerStatics2.Player2Color = currentColor.text;
     }
 }

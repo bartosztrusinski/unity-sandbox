@@ -8,9 +8,7 @@ public class PlayerStatics: MonoBehaviour
     public Texture txtBlue;
     public Texture txtGreen;
     public GameObject player1;
-    //public GameObject player2;
     public InputActionAsset join;
-    private InputAction myAction;
     private PlayerInputManager pim;
 
 
@@ -31,17 +29,18 @@ public class PlayerStatics: MonoBehaviour
 
     }
 
+
+
+
+
     private void Start()
     {
 
-        Debug.Log(IsMultiplayer);
-
         if (IsMultiplayer)
         {
-
+       
             pim = FindObjectOfType<PlayerInputManager>();
             pim.JoinPlayer();
-
 
         }
 
@@ -58,22 +57,8 @@ public class PlayerStatics: MonoBehaviour
                 BaseMapChange(player1,txtGreen);
             }
         }
-        /*
-        if (Player2Color.Equals("Red"))
-        {
-            BaseMapChange(player2, txtRed);
-        }
-        else
-        {
-            if (Player2Color.Equals("Blue"))
-            {
-                BaseMapChange(player2, txtBlue);
-            }
-            else
-            {
-                BaseMapChange(player2, txtGreen);
-            }
-        } */
+        
+
 
 
 

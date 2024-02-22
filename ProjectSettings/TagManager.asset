@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bomb
   - Canvas2
+  - Player2
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Cam2
   - Player2
   - Player
-  - 
+  - Player3
   - 
   - 
   - 
