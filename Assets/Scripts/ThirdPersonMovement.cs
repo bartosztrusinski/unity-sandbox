@@ -15,6 +15,13 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothVelocity;
     bool isSprinting;
 
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
+
     void Update()
     {
         Vector3 direction = ComputeDirection();
@@ -27,6 +34,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             HandleIdle();
         }
+
+
     }
     Vector3 ComputeDirection()
     {

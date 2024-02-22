@@ -1,14 +1,29 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
     public WeaponSystem weaponSystem;
-    public string shootButton = "Fire1";
+    public InputActionReference shootActionReference; // Referencja do akcji
 
-    void Update()
+
+
+    void Start()
     {
-        if (Input.GetButton(shootButton)) { 
-            weaponSystem.ShootContinuously();
+
+        if (shootActionReference != null && shootActionReference.action != null)
+        {
+            shootActionReference.action.performed += _ => weaponSystem.ShootContinuously();
+            shootActionReference.action.Enable();
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Wyrejestrowanie zdarzeñ
+        if (shootActionReference != null && shootActionReference.action != null)
+        {
+            shootActionReference.action.Disable();
         }
     }
 }
