@@ -1,50 +1,29 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
-    public int damage = 10;
-    public float range = 100f;
-    public float fireRate = 15f;
-    public float impactForce = 30f;
+    public WeaponSystem weaponSystem;
+    public InputActionReference shootActionReference; // Referencja do akcji
 
-    public Camera fpsCamera;
-    public ParticleSystem muzzleFlash;
-    public ParticleSystem impactEffect;
 
-    private float nextTimeToFire = 0f;
 
-    void Update()
+    void Start()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+
+        if (shootActionReference != null && shootActionReference.action != null)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+            shootActionReference.action.performed += _ => weaponSystem.ShootContinuously();
+            shootActionReference.action.Enable();
         }
     }
 
-    void Shoot()
+    void OnDestroy()
     {
-        muzzleFlash.Play();
-
-        RaycastHit hit;
-        bool isHit = Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range);
-
-        if(isHit)
+        // Wyrejestrowanie zdarzeñ
+        if (shootActionReference != null && shootActionReference.action != null)
         {
-            ParticleSystem impactInstance = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            impactInstance.Play();
-            Destroy(impactInstance.gameObject, 2f);
-
-            Target target = hit.transform.GetComponent<Target>();
-            if(target != null)
-            {
-                target.TakeDamage(damage);
-            }
-
-            if(hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
+            shootActionReference.action.Disable();
         }
     }
 }
